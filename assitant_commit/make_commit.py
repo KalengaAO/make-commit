@@ -3,9 +3,14 @@
 from pathlib import Path
 from datetime import datetime
 import subprocess
+import sys
 import janela
 import tree
-import sys
+
+RED = "\033[1;31m"
+YELLOW = "\033[1;33m"
+GREEN = "\033[1;32m"
+RESET = "\033[0m"
 
 def	make_add():
 	subprocess.run(
@@ -50,10 +55,12 @@ def	make_all():
 			make_commit(commit)
 			make_push()
 			criar_log(commit)
-		sys.exit(0)
+		else:
+			print (f"{YELLOW}Nenhum commit feito!{RESET}")
+			return
 	else:
-		print ("Pasta git não identificado!\
-\n Certifica que esta rodando o script no Diretorio raiz")
+		print (f"{RED}Pasta git não identificado!\
+\nCertifica que esta rodando o script no Diretorio raiz do projecto!{RESET}")
 		sys.exit(1)
 
 if __name__ == "__main__":

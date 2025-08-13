@@ -14,6 +14,7 @@ class Tree:
         else:
             self.fileCount += 1
 
+
     def summary(self):
         return f"{self.dirCount} directories, {self.fileCount} files"
 
