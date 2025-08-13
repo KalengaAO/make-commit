@@ -38,6 +38,8 @@ def	msg_commit():
 	janela.mainloop()
 	return msg["value"]
 
-if __name__ == "__main__":
+def	main():
 	commit = msg_commit()
-	print (commit)
+	
+if __name__ == "__main__":
+	main()
