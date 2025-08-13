@@ -25,7 +25,7 @@ def	make_push():
 			stdout=subprocess.DEVNULL)
 
 def	criar_log(commit):
-	time_log = "logcommit.log"
+	time_log = "../logcommit.log"
 	file_log = Path(time_log).expanduser().resolve()
 	list_dir = tree.result()
 	if not file_log.exists():
@@ -41,14 +41,16 @@ def	criar_log(commit):
 def	make_all():
 	dir_oculto = ".";
 	path = Path(dir_oculto + "git").expanduser().resolve()
-
+	print (path)
 	if path.is_dir():
 		print (f"Pasta git identificada: {path.resolve()}")
 		commit = janela.msg_commit()
-		make_add()
-		make_commit(commit)
-		make_push()
-		criar_log(commit)
+		if commit:
+			make_add()
+			make_commit(commit)
+			make_push()
+			criar_log(commit)
+		sys.exit(0)
 	else:
 		print ("Pasta git não identificado!\
 \n Certifica que esta rodando o script no Diretorio raiz")

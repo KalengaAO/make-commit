@@ -36,7 +36,9 @@ def	msg_commit():
 	janela.bind("<Escape>", cancelar)
 
 	janela.mainloop()
-	return msg["value"]
+	if msg:
+		return msg["value"]
+	sys.exit(1)
 
 def	main():
 	commit = msg_commit()
