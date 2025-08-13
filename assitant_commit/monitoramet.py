@@ -9,19 +9,9 @@ from make_commit import make_all
 DIRETORIO = Path().expanduser().resolve()
 MIN_LINHAS = 5
 
-
-
-
-
-
-
-
-
-
-
 def mudou_significativamente():
     diff = subprocess.run(
-        ["git", "diff", "-w", "--unified=0", "HEAD"],
+        ["git", "diff", "-w", "--unified=0", "--ignore-blank-lines", "--ignore-space-change", "HEAD"],
         cwd=DIRETORIO,
         capture_output=True,
         text=True
