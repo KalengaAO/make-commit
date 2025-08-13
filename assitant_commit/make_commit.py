@@ -25,7 +25,7 @@ def	make_push():
 			stdout=subprocess.DEVNULL)
 
 def	criar_log(commit):
-	time_log = datetime.now().strftime("log_ANO%Y_MES%m_DIA%d_H_%H_M_%M_.log")
+	time_log = "logcommit.log"
 	file_log = Path(time_log).expanduser().resolve()
 	list_dir = tree.result()
 	if not file_log.exists():
