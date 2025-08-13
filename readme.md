@@ -18,23 +18,4 @@ Monitorar mudanças usando git diff HEAD (com --ignore-blank-lines e --ignore-sp
 
 	Quantidade mínima de impacto – o commit só é feito se o número total de linhas modificadas (adições + remoções) for maior que 5. Isso evita que pequenas edições, como correção de um caractere ou um comentário, disparem um commit automático.
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    import subprocess
-
-def ha_mudancas_relevantes():
-    resultado = subprocess.run(
-        ["git", "diff", "HEAD", "--ignore-blank-lines", "--ignore-space-change"],
-        capture_output=True,
-        text=True
-    )
-    return bool(resultado.stdout.strip())
 
