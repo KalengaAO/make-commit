@@ -27,7 +27,7 @@ def	make_push():
 def	criar_log(commit):
 	time_log = datetime.now().strftime("log_ANO%Y_MES%m_DIA%d_H_%H_M_%M_.log")
 	file_log = Path(time_log).expanduser().resolve()
-	list_dir = tree.walk()
+	list_dir = tree.result()
 	if not file_log.exists():
 		file_log.touch(exist_ok=True)
 	if file_log.is_file():
