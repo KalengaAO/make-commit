@@ -32,9 +32,9 @@ def	criar_log(commit):
 		file_log.touch(exist_ok=True)
 	if file_log.is_file():
 		with open(file_log, mode='a', encoding='utf-8', newline='') as log:
-			log.write(f"Data: {datetime.now().strftime('%Y-%d-%m %H:%M:%S')}\n"
-						f"commit feito: {commit}\n"
-						f"Arquivos e diretorio:\n {list_dir}\n\n")
+			log.write(f"{datetime.now().strftime('%Y-%d-%m %H:%M:%S')}\n"
+						f"commit feito:\n {commit}\n"
+						f "Arquivos e diretorio:\n {list_dir}\n\n")
 	else:
 		sys.exit(1)
 
@@ -55,4 +55,4 @@ def	make_all():
 		sys.exit(1)
 
 if __name__ == "__main__":
-	make_all()
+	verif_caminho()

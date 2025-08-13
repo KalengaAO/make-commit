@@ -37,11 +37,10 @@ class Tree:
 
         return output
 
-directory = "."
-if len(sys.argv) > 1:
-    directory = sys.argv[1]
-
 def	result():
+	directory = "."
+	if len(sys.argv) > 1:
+		directory = sys.argv[1]
 	tree = Tree()
 	result = tree.walk(directory) + tree.summary()
 	return result
