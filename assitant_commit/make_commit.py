@@ -25,14 +25,14 @@ def	make_push():
 			stdout=subprocess.DEVNULL)
 
 def	criar_log(commit):
-	time_log = datetime.now().strftime("log_%Y_%m_%d_%H_%M_%S_.log")
+	time_log = datetime.now().strftime("log_ano_%Y_mes_%m_dia_%d_h_%H_m_%M_s_%S_.log")
 	file_log = Path(time_log).expanduser().resolve()
 	list_dir = tree.result()
 	if not file_log.exists():
 		file_log.touch(exist_ok=True)
 	elif file_log.is_file():
 		with open(file_log, mode='a', encoding='', newline='') as log:
-			log.write_text(f"{datetime.now().strftime('%Y-%d-%m %H:%M:%S')}\n \
+			log.writeline(f"{datetime.now().strftime('%Y-%d-%m %H:%M:%S')}\n \
 {commit}\n{list_dir}\n\n")
 	else:
 		sys.exit(1)
