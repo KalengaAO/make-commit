@@ -1,4 +1,4 @@
-# Assitente de commits
+# Assistente de commits
 **Monitoramento Automático de Alterações no Projeto**
 
 Este projeto implementa um sistema para monitorar e versionar automaticamente mudanças em um repositório Git, evitando commits desnecessários causados por alterações irrelevantes como espaços ou linhas em branco.
