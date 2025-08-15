@@ -7,7 +7,8 @@ from pathlib import Path
 from make_commit import make_all
 
 DIRETORIO = Path().expanduser().resolve()
-MIN_LINHAS = 5
+MIN_LINHAS = 20
+TIME_VAR = 60
 
 def mudou_significativamente():
     diff = subprocess.run(
@@ -29,8 +30,8 @@ def monitorar(diretorio):
     while True:
         if mudou_significativamente():
             make_all()
-            time.sleep(5) 
-        time.sleep(10)
+            time.sleep(TIME_VAR) 
+        time.sleep(TIME_VAR)
 
 if __name__ == "__main__":
     if not DIRETORIO.is_dir():
